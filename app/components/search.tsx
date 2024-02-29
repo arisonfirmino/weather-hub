@@ -1,10 +1,32 @@
-export default function Search() {
+"use client";
+
+import { useState, ChangeEvent, FormEvent } from "react";
+
+interface SearchProps {
+  onSearch: (city: string) => void;
+}
+
+export default function Search({ onSearch }: SearchProps) {
+  const [city, setCity] = useState("");
+
+  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setCity(event.target.value);
+  };
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    onSearch(city);
+    setCity("");
+  };
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <div className="rounded-xl border border-solid border-blue-500 p-2.5">
         <input
           type="text"
           placeholder="Busque por uma cidade"
+          value={city}
+          onChange={handleInputChange}
           className="w-80 bg-transparent p-2.5 outline-none"
         />
         <button
