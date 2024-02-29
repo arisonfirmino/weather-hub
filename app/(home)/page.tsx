@@ -9,7 +9,7 @@ import TemperatureDisplay from "../components/temperature-display";
 export default function Home() {
   const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
   const [cityName, setCityName] = useState("Londres");
-  const API_URL = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}&units=metric`;
+  const API_URL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}&units=metric`;
 
   const [weatherData, setWeatherData] = useState(null);
 
