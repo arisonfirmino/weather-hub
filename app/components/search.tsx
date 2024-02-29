@@ -20,14 +20,14 @@ export default function Search({ onSearch }: SearchProps) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="rounded-xl border border-solid border-blue-500 p-2.5">
+    <form onSubmit={handleSubmit} className="w-full xl:w-auto">
+      <div className="flex w-full rounded-xl border border-solid border-blue-500 p-2.5">
         <input
           type="text"
           placeholder="Busque por uma cidade"
           value={city}
           onChange={handleInputChange}
-          className="w-80 bg-transparent p-2.5 outline-none"
+          className="w-full bg-transparent p-2.5 outline-none xl:w-80"
         />
         <button
           type="submit"

@@ -30,10 +30,10 @@ export default function Home() {
   }, [API_URL]);
 
   return (
-    <main className="flex flex-col gap-10 p-5">
+    <main className="flex min-h-screen w-full flex-col gap-10 p-5">
       <Header />
 
-      <section className="flex items-center justify-between">
+      <section className="flex w-full flex-col items-center gap-5 xl:flex-row xl:justify-between xl:gap-0">
         <CityDate weatherData={weatherData} />
         <Search onSearch={handleSearch} />
       </section>

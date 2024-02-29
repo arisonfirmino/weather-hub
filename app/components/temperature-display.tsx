@@ -17,8 +17,8 @@ export default function TemperatureDisplay({
   cityName,
 }: TemperatureDisplayProps) {
   return (
-    <div className="flex flex-col items-center gap-10 rounded-xl bg-gradient-to-t from-[#ddd] to-blue-500 p-5 text-white">
-      <div className="flex items-center gap-10">
+    <div className="flex w-full flex-col items-center gap-10 rounded-xl bg-gradient-to-t from-[#ddd] to-blue-500 p-5 text-white xl:w-auto">
+      <div className="flex flex-col items-center gap-10 xl:flex-row">
         <div className="flex flex-col items-center gap-1">
           <h2 className="text-3xl font-medium">
             {weatherData?.main.temp} <span className="text-xl">°C</span>

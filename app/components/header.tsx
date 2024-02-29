@@ -8,7 +8,7 @@ export default function Header() {
         Weather Hub
       </h3>
 
-      <p className="flex items-center gap-1 text-xs opacity-50">
+      <p className="hidden items-center gap-1 text-xs opacity-50 xl:flex">
         <CopyrightIcon size={10} />
         2024 Arison. All Rights Reserved
       </p>

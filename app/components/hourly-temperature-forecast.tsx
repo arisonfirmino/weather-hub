@@ -38,7 +38,7 @@ export default function HourlyTemperatureForecast({
   }, [cityName]);
 
   return (
-    <div className="flex max-w-[440px] gap-5 overflow-x-auto rounded-xl bg-black bg-opacity-15 [&::-webkit-scrollbar]:hidden">
+    <div className="flex w-full gap-5 overflow-x-auto rounded-xl bg-black bg-opacity-15 xl:max-w-[440px] [&::-webkit-scrollbar]:hidden">
       {hourlyForecasts.map((item, index) => (
         <div
           key={index}
