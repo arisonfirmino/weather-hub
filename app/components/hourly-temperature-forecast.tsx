@@ -18,7 +18,7 @@ export default function HourlyTemperatureForecast({
 
   useEffect(() => {
     const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
-    const API_URL = `http://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${API_KEY}&units=metric&lang=pt&hourly=1`;
+    const API_URL = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${API_KEY}&units=metric&lang=pt&hourly=1`;
 
     fetch(API_URL)
       .then((response) => response.json())
@@ -46,7 +46,7 @@ export default function HourlyTemperatureForecast({
         >
           <p>{item.hour}:00</p>
           <Image
-            src={`http://openweathermap.org/img/wn/${item.icon}.png`}
+            src={`https://openweathermap.org/img/wn/${item.icon}.png`}
             height={30}
             width={30}
             alt="Weather Icon"
