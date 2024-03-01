@@ -6,6 +6,7 @@ import {
   ThermometerIcon,
 } from "lucide-react";
 import HourlyTemperatureForecast from "./hourly-temperature-forecast";
+import weatherTranslations from "./weather-translations";
 
 interface TemperatureDisplayProps {
   weatherData: any;
@@ -16,6 +17,12 @@ export default function TemperatureDisplay({
   weatherData,
   cityName,
 }: TemperatureDisplayProps) {
+  const mapWeatherDescription = (description: string) => {
+    return description
+      ? weatherTranslations[description.toLowerCase()] || description
+      : "";
+  };
+
   return (
     <div className="flex w-full flex-col items-center gap-10 rounded-xl bg-gradient-to-t from-[#ddd] to-blue-500 p-5 text-white xl:w-auto">
       <div className="flex flex-col items-center gap-10 xl:flex-row">
@@ -26,7 +33,7 @@ export default function TemperatureDisplay({
 
           <p className="flex items-center gap-2 capitalize">
             <MoonIcon size={16} />
-            {weatherData?.weather[0].description}
+            {mapWeatherDescription(weatherData?.weather[0].description)}
           </p>
         </div>
 
